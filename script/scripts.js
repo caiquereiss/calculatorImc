@@ -7,11 +7,14 @@ function getWeightHeight(){
     height
   }
 }
+function calculateImc() {
+  const {weight, height } =  getWeightHeight();
+  const calculate =  weight / (height * height);
+  return calculate;
+}
 
 function calcular() {
-  const {weight, height } =  getWeightHeight();
-  const imc =  weight / (height * height); 
-
-  document.getElementById('result').innerHTML = imc.toFixed(2);
+ const imc = calculateImc();
+ document.getElementById('result').innerHTML = imc.toFixed(2);
  
 }
